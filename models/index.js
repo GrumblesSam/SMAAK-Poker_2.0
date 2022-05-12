@@ -13,7 +13,7 @@ Hand.belongsTo(User, {
 });
 
 Log.hasMany(Hand, {
-    foreignKey: 'id',
+    foreignKey: 'hand_id',
     onDelete: 'CASCADE',
 });
 
