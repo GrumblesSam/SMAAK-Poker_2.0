@@ -1,0 +1,66 @@
+Figure out table logic
+
+Get front end and back end working together
+	buttons for each action
+	display for chips/cards
+
+Get images for table and cards
+
+Multiplayer?
+	if not need hotseat
+
+Store hands
+	maybe on fold?
+	store with community cards?
+
+Some kind of log
+	When hand is done, store it all
+
+	Contains
+		all hands used in this round
+		community cards
+		who won
+		how much?
+
+User chip tracking
+	check chips before sitting down
+
+
+
+
+* make table 
+* sit down 2+ players (check their chips)
+* start game (check button)
+* go through all players and get their actions
+Once pot is good, end betting round endBettingRound()
+flop
+* go through all players and get their actions
+Once pot is good, end betting round endBettingRound()
+turn
+* go through all players and get their actions
+Once pot is good, end betting round endBettingRound()
+river
+* go through all players and get their actions
+showdown()
+log?
+
+if one player is left, showdown()
+automatic actions
+
+
+get routes for game
+	makeTable
+	sitDown (at least 2)
+	startGame
+	action calls
+		check, fold, etc
+	newRound (flop)
+	action calls
+		check, fold, etc
+	newRound (turn)
+	action calls
+		check, fold, etc
+	newRound (river)
+	action calls
+		check, fold, etc
+	showdown
