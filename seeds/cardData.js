@@ -1,6 +1,6 @@
-const { Cards } = require('../models');
+const { Cards, Card } = require('../models');
 
-const carddata = [
+const cardData = [
     {
         title: 'AS',
         filename: 'AS.png',
@@ -210,3 +210,6 @@ const carddata = [
         filename: 'KH.png',
     },
 ]
+
+const seedCards = () => Card.bulkCreate(cardData);
+module.exports = seedCards;

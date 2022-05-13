@@ -44,15 +44,15 @@ router.post('/logout', (req, res) => {
 });
 
 router.post('/create', async(req,res) => {
-  console.log('post method') 
   try {
         console.log('post method 2')
         const userData = await User.findOne({ where: { email: req.body.email } });
     
         if (userData) {
           res
-            .status(400)
+            .status(300)
             .json({ message: 'user already exists' });
+            console.log('user exists')
           return;
         }
         let user = await User.create(
