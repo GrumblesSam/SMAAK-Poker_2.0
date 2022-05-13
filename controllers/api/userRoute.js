@@ -4,7 +4,7 @@ const { User } = require('../../models');
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
-
+    console.log(userData.user_id);
     if (!userData) {
       res
         .status(400)
@@ -22,7 +22,7 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.user_id = userData.user_id;
       req.session.logged_in = true;
       
       res.json({ user: userData, message: 'You are now logged in!' });
@@ -57,6 +57,7 @@ router.post('/create', async(req,res) => {
         }
         let user = await User.create(
            req.body
+           // add starting chips
           );
           // let data = await user.authorize();
           return res.json(user);
