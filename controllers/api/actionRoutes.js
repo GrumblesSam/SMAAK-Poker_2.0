@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const Poker = require('poker-ts');
-const { Hand } = require('../../models');
+const { Hand, User } = require('../../models');
 
 
 // end betting rounds
@@ -95,19 +95,35 @@ router.get('/tableCards', (req, res) => {
 
 router.get('/winners', (req, res) => {
     res.json(table.winners());
-})
+});
 
 router.get('/progress', (req, res) => {
     console.log(table.isBettingRoundInProgress());
     console.log(table.isHandInProgress());
     res.json('check log');
-})
+});
 
-router.get('/sitDown/:seat/:chips', (req, res) => {
+router.put('/sitDown/:seat/:chips', async (req, res) => {
     // when sitting down, display how many chips you have
     // ask for input of how many you want to sit down with
     // must be within range of your chips'
-    console.log(req.params);
+    
+    let userData = await User.findOne({ where: { user_id: req.session.user_id } })
+
+    User.update(
+        {
+            seat: JSON.parse(req.params.seat),
+            chip: userData.chip - JSON.parse(req.params.chips),
+        },
+        {
+            where: {
+                user_id: req.session.user_id,
+            }
+        }
+    )
+        // .then((updatedUser) => {
+        //     res.json(updatedUser);
+        // })
     let mySeat = JSON.parse(req.params.seat);
     let myChips = JSON.parse(req.params.chips);
     table.sitDown(mySeat, myChips);
@@ -125,6 +141,28 @@ router.get('/sitDown/:seat/:chips', (req, res) => {
     //   res.redirect('/login').end();
     // }
   });
+
+router.put('/standUp/:seat', (req, res) => {
+
+    // const userData = await User.findOne({ where: { email: req.body.email } });
+    console.log(table.seats()[req.params.seat].totalChips);
+    User.update(
+        {
+            seat: null,
+            chip: table.seats()[req.params.seat].totalChips,
+        },
+        {
+            where: {
+                user_id: req.session.user_id,
+            }
+        }
+    )
+
+
+    table.standUp(JSON.parse(req.params.seat));
+    res.json('stood up');
+    
+})
 
 router.get('/whatRound', (req,res) => {
     res.status(200).json(table.roundOfBetting());
@@ -248,7 +286,7 @@ router.get('/bet/:seat/:betAmount', (req, res) => {
     }
     });
     
-// req.body.seat===req.params.seat
+// req.body.seat===req.params.seat FUTURE :)
 router.get('/raise/:seat/:betAmount', (req, res) => {
     // pass in current active seat
     if (true) {
