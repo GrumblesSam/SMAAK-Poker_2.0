@@ -1,0 +1,157 @@
+:root {
+   
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+  background-color: var(--quatrinary);
+}
+
+.login-card {
+  margin: 0 0 20px 0;
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 5px;
+  border: 3px solid var(--dark);
+  border-radius: var(--border-radius);
+  border-style: double;
+  border-width: thick;
+  background-color: #577a7c;
+  color: var(--light);
+}
+
+
+body {
+  height: 100%;
+}
+
+.poker {
+  bottom: 0;
+  height: 100vh;
+  left: 50%;
+  margin-left: -50vh;
+  position: absolute;
+  transform: scale(0.9);
+  transform-origin: 50% 100%;
+  width: 100vh;
+}
+
+.hand {
+  bottom: -1vh;
+  left: 0;
+  position: absolute;
+}
+
+.finger,
+.card {
+  animation: creep 3s ease-in-out 0s infinite alternate backwards;
+  background: no-repeat url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/59639/poker.png') 0 0;
+  background-size: 200vh 200vh;
+  position: absolute;
+  transform-origin: 50% 90%;
+}
+
+.pinky {
+  animation-delay: 0.7s;
+  bottom: 0;
+  height: 36vh;
+  left: 42.8vh;
+  transform-origin: 50% 100%;
+  width: 36.6vh;
+}
+
+.ring {
+  animation-delay: 4s;
+  background-position: -37vh 0;
+  bottom: 0.8vh;
+  height: 47vh;
+  left: 35.7vh;
+  width: 47.4vh;
+}
+
+.middle {
+  animation-delay: 0.2s;
+  background-position: -85vh 0;
+  bottom: 5.6vh;
+  height: 62.5vh;
+  left: 31.7vh;
+  width: 47.2vh;
+}
+
+.index {
+  background-position: -133vh 0;
+  bottom: 16.6vh;
+  height: 53.6vh;
+  left: 25.6vh;
+  width: 33.5vh;
+}
+
+.cards {
+  animation: creep 3s ease-in-out 0s infinite alternate;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform-origin: 40% 65%;
+  width: 100%;
+}
+
+.ten {
+  animation-delay: 0.2s;
+  background-position: -0.1vh -65vh;
+  bottom: 29.8vh;
+  height: 61.2vh;
+  left: 37.8vh;
+  transform-origin: 5% 70%;
+  width: 60.6vh;
+}
+
+.jack {
+  animation-delay: 0.8s;
+  background-position: -62vh -65vh;
+  bottom: 44vh;
+  height: 52.4vh;
+  left: 34.2vh;
+  transform-origin: 15% 90%;
+  width: 47.8vh;
+}
+
+.queen {
+  animation-delay: 1.1s;
+  background-position: -111vh -65vh;
+  bottom: 39.2vh;
+  height: 52.7vh;
+  left: 26.9vh;
+  transform-origin: 50% 95%;
+  width: 25vh;
+}
+
+.king {
+  animation-delay: 1.2s;
+  background-position: -137vh -65vh;
+  bottom: 38vh;
+  height: 58.1vh;
+  left: 13.6vh;
+  transform-origin: 60% 95%;
+  width: 36.3vh;
+}
+
+.ace {
+  animation-delay: 1.3s;
+  background-position: 0vh -127vh;
+  bottom: 27.9vh;
+  height: 55.8vh;
+  left: 3.6vh;
+  transform-origin: 90% 100%;
+  width: 39.6vh;
+}
+
+@keyframes creep {
+  0% { transform: rotate(-2deg); }
+  100% { transform: rotate(0deg); }
+}
