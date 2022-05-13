@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Museum</title>
   
-  <link rel="stylesheet" type="text/css" href="/css/jass.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 
 </head>
@@ -17,11 +15,8 @@
   
   <nav>
     <a href="/">Home</a>
-    {{#if loggedIn}}
     <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/public/js/login.js">Login</a>
-    {{/if}}
+    <a href="/login">Login</a>
 
     
   </nav>
@@ -33,12 +28,8 @@
       {{{body}}}
     </div>
   </main>
-  {{#if loggedIn}}
-  <script src="/public/js/logout.js"></script>
-  {{/if}}
+
+  
 </body>
-
-
-
 
 

@@ -17,22 +17,22 @@
   },
   "homepage": "https://github.com/coding-boot-camp/module-14-project-mvc#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^6.1.1",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "express-session": "^1.17.0",
+    "handlebars": "^4.7.7",
     "mysql2": "^2.0.1",
-    "poker-ts": "^1.0.0",
-    "sequelize": "^5.21.2",
-    "bcrypt": "^5.0.1",
-    "cors": "^2.8.5",
     "node": "^17.7.2",
     "passport": "^0.5.2",
-    "passport-auth0": "^1.4.2"
+    "passport-auth0": "^1.4.2",
+    "poker-ts": "^1.0.0",
+    "sequelize": "^5.21.2"
   },
   "devDependencies": {
     "sequelize-cli": "^6.4.1"
   }
-
 }
