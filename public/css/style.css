@@ -17,12 +17,12 @@ body {
   flex: 0 0 50%;
   max-width: 50%;
   padding: 5px;
-  border: 3px solid var(--dark);
-  border-radius: var(--border-radius);
+  border: 3px solid var();
+  border-radius: var();
   border-style: double;
   border-width: thick;
   background-color: #577a7c;
-  color: var(--light);
+  color: var();
 }
 
 
@@ -30,22 +30,22 @@ body {
   height: 100%;
 }
 
-.poker {
+.PokerCards {
   bottom: 0;
   height: 100vh;
   left: 50%;
   margin-left: -50vh;
   position: absolute;
   transform: scale(0.9);
-  transform-origin: 50% 100%;
-  width: 100vh;
-}
+  transform-origin: 60% 100%;
+  width: 50%;
+} 
 
-.hand {
+.Hands {
   bottom: -1vh;
   left: 0;
   position: absolute;
-}
+} 
 
 .finger,
 .card {
@@ -53,28 +53,28 @@ body {
   background: no-repeat url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/59639/poker.png') 0 0;
   background-size: 200vh 200vh;
   position: absolute;
-  transform-origin: 50% 90%;
-}
+  transform-origin: 55% 90%;
+} 
 
-.pinky {
-  animation-delay: 0.7s;
+.Pinky {
+  animation-delay: 0.9s;
   bottom: 0;
-  height: 36vh;
+  height: 37vh;
   left: 42.8vh;
   transform-origin: 50% 100%;
   width: 36.6vh;
 }
 
-.ring {
+.Ring {
   animation-delay: 4s;
   background-position: -37vh 0;
-  bottom: 0.8vh;
+  bottom: 0.9vh;
   height: 47vh;
   left: 35.7vh;
   width: 47.4vh;
 }
 
-.middle {
+.Middle {
   animation-delay: 0.2s;
   background-position: -85vh 0;
   bottom: 5.6vh;
@@ -83,7 +83,7 @@ body {
   width: 47.2vh;
 }
 
-.index {
+.Index {
   background-position: -133vh 0;
   bottom: 16.6vh;
   height: 53.6vh;
@@ -91,7 +91,7 @@ body {
   width: 33.5vh;
 }
 
-.cards {
+.Cards {
   animation: creep 3s ease-in-out 0s infinite alternate;
   height: 100%;
   left: 0;
@@ -101,7 +101,7 @@ body {
   width: 100%;
 }
 
-.ten {
+.Ten {
   animation-delay: 0.2s;
   background-position: -0.1vh -65vh;
   bottom: 29.8vh;
@@ -111,7 +111,7 @@ body {
   width: 60.6vh;
 }
 
-.jack {
+.Jack {
   animation-delay: 0.8s;
   background-position: -62vh -65vh;
   bottom: 44vh;
@@ -121,7 +121,7 @@ body {
   width: 47.8vh;
 }
 
-.queen {
+.Queen {
   animation-delay: 1.1s;
   background-position: -111vh -65vh;
   bottom: 39.2vh;
@@ -131,7 +131,7 @@ body {
   width: 25vh;
 }
 
-.king {
+.King {
   animation-delay: 1.2s;
   background-position: -137vh -65vh;
   bottom: 38vh;
@@ -141,7 +141,7 @@ body {
   width: 36.3vh;
 }
 
-.ace {
+.Ace {
   animation-delay: 1.3s;
   background-position: 0vh -127vh;
   bottom: 27.9vh;
